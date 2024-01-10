@@ -1,0 +1,48 @@
+
+export component ButtonNum inherits Rectangle {
+    in-out property text <=> txt.text;
+    callback clicked <=> touch.clicked;
+    max-width: 58px;
+    min-width: 58px;
+    border-radius: 0px;
+    border-width: 0.5px;
+    border-color: #1c1c1d;
+    background: touch.pressed ? #9E9FA0: #5E5F61 ;
+    txt := Text {
+        color: touch.pressed ? #fff : #eee;
+        font-size: 20px;
+    }
+    touch := TouchArea { }
+}
+
+export component ButtonArth inherits Rectangle {
+    in-out property text <=> txt.text;
+    callback clicked <=> touch.clicked;
+    max-width: 58px;
+    min-width: 58px;
+    border-radius: 0px;
+    border-width: 0.5px;
+    border-color: #1c1c1d;
+    background: touch.pressed ? #CB7D06 :  #F2A33C;
+    txt := Text {
+        color: touch.pressed ? #fff : #eee;
+        font-size: 20px;
+    }
+    touch := TouchArea { }
+}
+
+export component ButtonMath inherits Rectangle {
+    in-out property text <=> txt.text;
+    callback clicked <=> touch.clicked;
+    max-width: 58px;
+    min-width: 58px;
+    border-radius: 0px;
+    border-width: 0.5px;
+    border-color: #1c1c1d;
+    background: touch.pressed ? #5E5F61 : #3D3F42;
+    txt := Text {
+        color: touch.pressed ? #fff : #eee;
+        font-size: 20px;
+    }
+    touch := TouchArea { }
+}

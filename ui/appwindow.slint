@@ -1,0 +1,64 @@
+import { Button, VerticalBox, HorizontalBox , GridBox} from "std-widgets.slint";
+import {ButtonNum, ButtonArth, ButtonMath} from "button.slint";
+import "/Users/paulduvenage/Documents/Rust_Development/Learning/calc-rs/calc-slint-rs/font/SFUIDisplay-Light.ttf";
+
+
+export component AppWindow inherits Window {
+    default-font-family: "SFUI Display";
+    max-width: 232px;
+    max-height: 321px;
+    min-width: 232px;
+    min-height: 321px;
+    title:"";
+
+    GridBox {
+        spacing: 0px;
+        padding: 0px;
+        Row {
+            Text {
+                horizontal-alignment: right;
+                vertical-alignment: bottom;
+                colspan: 4;
+                height: 80px;
+                font-family: "SFUI Display";
+                font-size: 45px;
+                text: "0";
+            }
+        }
+        Row {
+            ButtonMath { text: "AC"; }
+            ButtonMath { text: "±"; }
+            ButtonMath { text: "%"; }
+            ButtonArth { text: "÷"; }
+        }
+        Row {
+            ButtonNum { text: "7"; }
+            ButtonNum { text: "8"; }
+            ButtonNum { text: "9"; }
+            ButtonArth { text: "x"; }
+        }
+        Row {
+            ButtonNum { text: "4"; }
+            ButtonNum { text: "5"; }
+            ButtonNum { text: "6"; }
+            ButtonArth { text: "−"; }
+        }
+        Row {
+            ButtonNum { text: "1"; }
+            ButtonNum { text: "2"; }
+            ButtonNum { text: "3"; }
+            ButtonArth { text: "+"; }
+        }
+        Row {
+            ButtonNum {
+                    text: "0";
+                    colspan: 2;
+                    }
+            ButtonNum {
+                text: ",";
+                col: 2;
+            }
+            ButtonArth { text: "="; }
+        }
+    }
+}
