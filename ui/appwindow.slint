@@ -2,6 +2,9 @@ import { Button, VerticalBox, HorizontalBox , GridBox} from "std-widgets.slint";
 import {ButtonNum, ButtonArth, ButtonMath} from "button.slint";
 import "/Users/paulduvenage/Documents/Rust_Development/Learning/calc-rs/calc-slint-rs/font/SFUIDisplay-Light.ttf";
 
+export global CalcLogic {
+    callback button-pressed(string);
+}
 
 export component AppWindow inherits Window {
     default-font-family: "SFUI Display";
@@ -9,56 +12,169 @@ export component AppWindow inherits Window {
     max-height: 321px;
     min-width: 232px;
     min-height: 321px;
-    title:"";
+    title: "";
 
-    GridBox {
+    in-out property <float> result: 0;
+    in-out property <length> font-size: 45px;
+    in-out property <string> clr: "AC";
+    GridLayout {
         spacing: 0px;
         padding: 0px;
         Row {
-            Text {
+            result := Text {
                 horizontal-alignment: right;
                 vertical-alignment: bottom;
                 colspan: 4;
                 height: 80px;
                 font-family: "SFUI Display";
-                font-size: 45px;
-                text: "0";
+                font-size: root.font-size;
+                text: root.result;
             }
         }
+
         Row {
-            ButtonMath { text: "AC"; }
-            ButtonMath { text: "±"; }
-            ButtonMath { text: "%"; }
-            ButtonArth { text: "÷"; }
+            ButtonMath {
+                text: root.clr;
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+
+            ButtonMath {
+                text: "±";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+
+            ButtonMath {
+                text: "%";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+
+            ButtonArth {
+                text: "÷";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
         }
-        Row {
-            ButtonNum { text: "7"; }
-            ButtonNum { text: "8"; }
-            ButtonNum { text: "9"; }
-            ButtonArth { text: "x"; }
-        }
-        Row {
-            ButtonNum { text: "4"; }
-            ButtonNum { text: "5"; }
-            ButtonNum { text: "6"; }
-            ButtonArth { text: "−"; }
-        }
-        Row {
-            ButtonNum { text: "1"; }
-            ButtonNum { text: "2"; }
-            ButtonNum { text: "3"; }
-            ButtonArth { text: "+"; }
-        }
+
         Row {
             ButtonNum {
-                    text: "0";
-                    colspan: 2;
-                    }
+                text: "7";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+
+            ButtonNum {
+                text: "8";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+
+            ButtonNum {
+                text: "9";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+
+            ButtonArth {
+                text: "x";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+        }
+
+        Row {
+            ButtonNum {
+                text: "4";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+
+            ButtonNum {
+                text: "5";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+
+            ButtonNum {
+                text: "6";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+
+            ButtonArth {
+                text: "−";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+        }
+
+        Row {
+            ButtonNum {
+                text: "1";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+
+            ButtonNum {
+                text: "2";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+
+            ButtonNum {
+                text: "3";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+
+            ButtonArth {
+                text: "+";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+        }
+
+        Row {
+            ButtonNum {
+                text: "0";
+                colspan: 2;
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
+
             ButtonNum {
                 text: ",";
                 col: 2;
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
             }
-            ButtonArth { text: "="; }
+
+            ButtonArth {
+                text: "=";
+                clicked => {
+                    CalcLogic.button-pressed(self.text);
+                }
+            }
         }
     }
 }

@@ -7,11 +7,12 @@ export component ButtonNum inherits Rectangle {
     border-radius: 0px;
     border-width: 0.5px;
     border-color: #1c1c1d;
-    background: touch.pressed ? #9E9FA0: #5E5F61 ;
+    background: touch.pressed ? #9E9FA0 : #5E5F61;
     txt := Text {
         color: touch.pressed ? #fff : #eee;
         font-size: 20px;
     }
+
     touch := TouchArea { }
 }
 
@@ -23,11 +24,12 @@ export component ButtonArth inherits Rectangle {
     border-radius: 0px;
     border-width: 0.5px;
     border-color: #1c1c1d;
-    background: touch.pressed ? #CB7D06 :  #F2A33C;
+    background: touch.pressed ? #CB7D06 : #F2A33C;
     txt := Text {
         color: touch.pressed ? #fff : #eee;
         font-size: 20px;
     }
+
     touch := TouchArea { }
 }
 
@@ -44,5 +46,6 @@ export component ButtonMath inherits Rectangle {
         color: touch.pressed ? #fff : #eee;
         font-size: 20px;
     }
+
     touch := TouchArea { }
 }
